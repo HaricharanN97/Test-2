@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the Silence, End Bullying</title>
+    
+    <!-- Add Google Translate scripts -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        // JavaScript for smooth page transitions
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".transition-link");
+
+            links.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const href = this.getAttribute("href");
+
+                    // Apply fade-out effect on body
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timing with CSS transition duration
+                });
+            });
+        });
+
+        window.addEventListener("pageshow", function(event) {
+            if (event.persisted) {
+                document.body.classList.remove("fade-out");
+            }
+        });
+    </script>
+
+    <style>
+        /* General reset and styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: "Lucida Sans", sans-serif;
+            background-color: #a66e44; /* Pastel brown */
+            color: #FFFDD0; /* Cream */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+
+        /* Layout styles */
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        /* Responsive design for smaller screens */
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        /* Menu Styling */
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: #805636; /* Darker pastel brown for contrast */
+            color: #FFFDD0; /* Cream */
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideIn 1s forwards ease-out;
+        }
+
+        .menu li:hover {
+            background-color: #805636; /* Slightly darker pastel brown */
+            transform: scale(1.05); /* Grow slightly on hover */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Staggering the animation for each list item */
+        .menu li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .menu li:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        .menu li:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+        .menu li:nth-child(4) {
+            animation-delay: 0.12s;
+        }
+
+        .transition-link {
+            text-decoration: none;
+        }
+
+        /* Slide-in Animation for Menu */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Header & Main Content Styling */
+        .header {
+            background-color: #805636; /* Darker pastel brown */
+            color: #FFFDD0; /* Cream */
+            padding: 15px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Aside and Footer Styling */
+        .aside {
+            background-color: #805636; /* Darker pastel brown */
+            padding: 15px;
+            color: #FFFDD0; /* Cream */
+            text-align: center;
+            font-size: 14px;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .footer {
+            background-color: #805636; /* Darker pastel brown */
+            color: #FFFDD0; /* Cream */
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .box {
+            background-color: #805636; /* Even darker pastel brown */
+            color: #FFFDD0; /* Cream */
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        /* Additional Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            from {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Adding mixed effect on the main content section */
+        .col-6 h1 {
+            animation: slideUp 1s ease-out;
+        }
+
+        .col-6 p {
+            animation: fadeIn 2s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element"></div>
+
+        <div class="header">
+            <h1>Stop the Silence, End Bullying</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-3 menu">
+                <element class="menu"></element>
+                <ul>
+                    <a href="What Is Bullying.html" class="transition-link"><li :nth-child(1)>What Is Bullying</li></a>
+                    <a href="The Cause Of Bullying.html" class="transition-link"><li :nth-child(2)>The Cause Of Bullying</li></a>
+                    <a href="What Is Bullying.html" class="transition-link"><li :nth-child(3)>The Consequences Of Bullying</li></a>
+                    <a href="What Is Bullying.html" class="transition-link"><li :nth-child(4)>How to Overcome Bullying</li></a>
+                </ul>
+            </div>
+
+            <div class="col-6">
+                <h1>Why We're Here?</h1>
+                <p>Bullying can shatter a person’s confidence, self-worth, and mental health. Whether it happens in schools, workplaces, or online, its effects are profound and long-lasting. We’re here to change that. Our goal is to empower individuals, raise awareness, and provide resources to those affected by bullying. Together, we can stop the silence and foster a culture of kindness and respect.</p>
+                <p>It can happen in schools, workplaces, and even online.</p>
+            </div>
+
+            <div class="col-3">
+                <div class="aside">
+                    <h2>Resources</h2>
+                    <p>Find support and resources to combat bullying in your community.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Raise awareness and take action today. Together, we can end bullying.</p>
+        </div>
+    </div>
+</body>
+</html>
